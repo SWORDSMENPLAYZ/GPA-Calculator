@@ -21,10 +21,8 @@ def calculate_gpa(grades):
               grade_value = 2.0
             if grade < 69.45:
               grade_value = 1.0
-            if grade <= 50:
-              print('why are you so dumb')
-            if grade > 100:
-              print("Stop the cap.") # i fixed it
+            if grade > 100 or grade < 0.1:
+              print("Invalid Grade")
               break 
           else: 
             if grade in grade_lookup:
@@ -38,7 +36,7 @@ def calculate_gpa(grades):
           total_grade_points += grade_value * credit
           total_credits += credit
       if total_credits == 0:
-          return "either you made an error or you dumb asf"
+          return "N/A"
       else:
           return total_grade_points / total_credits
 
